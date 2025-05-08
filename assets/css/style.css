@@ -2,15 +2,13 @@
 {
     --primary-color: #171717;
     --secondery-color: #CF3639;
-    --third-color: #444444;
-    --text-color: #171717;
     --black-color: #000000;
     --white-color: #ffffff;
     --body-bg: var(--white-color);
     --border-raduis: 24px;
 }
 body {
-  font-family: "Outfit", sans-serif;
+  font-family: "Tajawal", sans-serif;
   font-weight: 400;
   font-size: 14px;
   box-sizing: border-box;
@@ -123,37 +121,62 @@ a:hover {
 }
 .side-section
 {
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: rgba(23, 23, 23, 0.6);
   width: 36%;
   min-width: 480px;
-  padding: 30px;
+  padding: 20px 30px;
   min-height: 100vh;
+  position: relative;
 }
+
 .header
 {
   display: flex;
+  flex-direction: column;
   justify-content: center;
+  align-items: center;
+}
+.language-cont
+{
+    margin: 0 16px;
+    margin-top: 15px;
+}
+.language-cont .lang-anc 
+{
+    display: inline-block;
+    font-size: 18px;
+    color: var(--white-color);
+   
+}
+.language-cont .lang-anc > i
+{
+    margin-inline-start: 5px;
+}
+.language-cont .lang-anc:hover
+{
+    color: var(--secondery-color);
 }
 .content
 {
-  margin-top: 50px;
+  margin-top: 20px;
 }
-.items-list .item:not(:last-child)
+.items-list .item:not(:last-of-type)
 {
-  margin-bottom: 20px;
+  margin-bottom: 15px;
 }
-.items-list .item  .item-anc
+.side-section .item  .item-anc,
+.other-branches .item
 {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: var(--secondery-color);
+  background-color: rgba(207, 54, 57, 0.8);
   color: var(--white-color);
-  padding: 10px 30px;
+  padding: 10px 20px;
   border-radius: 5px;
   cursor: pointer;
 }
-.items-list .item .icon 
+.side-section .item .icon 
 {
   display: flex;
   align-items: center;
@@ -165,43 +188,72 @@ a:hover {
   background-color: var(--white-color);
   color: var(--primary-color);
 }
-.items-list .item .name
+.side-section .item .name
 {
   text-transform: capitalize;
   font-size: 18px;
 }
-.items-list .item .dots
+.side-section .item .dots
 {
   font-size: 16px;
 }
-.dropdown-item
+.logo
 {
-  position: relative;
-}
-.dropdown-list {
-  background-color: #ffffff;
-  width: 100%;
-  padding: 8px;
-  white-space: nowrap;
-  border: none;
-  border-radius: 0px;
-  margin-top: 0;
-  -webkit-box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.1);
-  box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.1);
-  display: none;
-  border-radius: 5px;
-}
-.dropdown-list > li {
-  position: relative;
-  padding: 3px 5px;
-}
-.dropdown-list > li > a {
-  color: var(--black-color);
-  font-size: 12px;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
   display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  border: 2px solid var(--secondery-color);
+  z-index: 1;
+  overflow: hidden;
 }
-.dropdown-list > li > a:hover {
-  color: var(--main-color);
+.logo::before
+{
+  content: '';
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(8px);
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    border-radius: 50%;
+}
+.branches
+{
+  margin-top: 15px;
+}
+.other-branches
+{
+  display: flex;
+  justify-content: space-between;
+  margin-top: 15px;
+  column-gap: 15px;
+}
+.other-branches .item
+{
+  flex: 1;
+  position: relative;
+  text-align: center;
+  justify-content: center;
+}
+.other-branches .item::before
+{
+  content: "";
+  height: 15px;
+  width: 2px;
+  background-color: rgba(207, 54, 57, 0.8);
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.other-branches .item .name
+{
+  font-size: 14px;
 }
 
 
@@ -210,19 +262,23 @@ a:hover {
 {
   .main-section
   {
-    padding: 30px 40px;
+    padding: 20px;
   }
   .side-section
   {
     width: 100%;
     border-radius: 10px;
     min-width: unset;
+    border-radius: 30px;
+    overflow: hidden;
+    min-height: unset;
+    padding: 25px 15px;
   }
-  .items-list .item .item-anc
+  .side-section .item .item-anc
   {
     padding: 10px 20px;
   }
-  .items-list .item .name
+  .side-section .item .name
   {
     font-size: 14px;
   }
