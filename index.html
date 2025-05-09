@@ -114,11 +114,17 @@
               </a>
             </li>
             <li class="item">
-              <a href="#" class="fixanc item-anc">
+              <a
+                type="button"
+                role="button"
+                data-bs-toggle="modal"
+                data-bs-target="#branchesModal"
+                class="fixanc item-anc"
+              >
                 <span class="icon"
-                  ><i class="fa-solid fa-location-dot"></i
+                  ><i class="fa-solid fa-code-branch"></i
                 ></span>
-                <div class="name">location</div>
+                <div class="name">Branches</div>
                 <span><i class="fa-solid fa-ellipsis"></i></span>
               </a>
             </li>
@@ -129,30 +135,95 @@
                 <span><i class="fa-solid fa-ellipsis"></i></span>
               </a>
             </li>
-          </ul>
-          <div class="branches">
-            <div class="main-branch item">
-              <a href="#" class="fixanc item-anc">
-                <span class="icon"
-                  ><i class="fa-solid fa-location-dot"></i
-                ></span>
-                <div class="name">Main Branch</div>
+            <li class="item">
+              <a href="tel:+97143791360" class="fixanc item-anc">
+                <span class="icon"><i class="fa-solid fa-phone"></i></span>
+                <div class="name">+97143791360</div>
                 <span><i class="fa-solid fa-ellipsis"></i></span>
               </a>
-            </div>
-            <ul class="other-branches fixul list-unstyled">
-              <li class="item">
-                <div class="name">sub Branch</div>
-              </li>
-              <li class="item">
-                <div class="name">sub Branch</div>
-              </li>
-            </ul>
-          </div>
+            </li>
+            <li class="item">
+              <a href="mailto:info@safetyfirst-uae.com" class="fixanc item-anc">
+                <span class="icon"><i class="fa-solid fa-envelope"></i></span>
+                <div class="name">info@safetyfirst-uae.com</div>
+                <span><i class="fa-solid fa-ellipsis"></i></span>
+              </a>
+            </li>
+          </ul>
         </div>
       </div>
     </main>
     <!-- End Main slider -->
+
+    <!-- The Modal -->
+    <div class="modal fade branches" id="branchesModal">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <!-- Modal Header -->
+          <div class="modal-header">
+            <button
+              type="button"
+              class="btn-close fixbtn"
+              data-bs-dismiss="modal"
+            >
+              <i class="fa-solid fa-circle-xmark"></i>
+            </button>
+          </div>
+
+          <!-- Modal body -->
+          <div class="modal-body">
+            <h1 class="fixh modal-title">Our Branches</h1>
+            <div class="branches-cont">
+              <ul class="brances-list list-unstyled fixul">
+                <li class="item">
+                  <div class="name">
+                    Head Office (Dubai):
+                    <p class="fixp">
+                      Dubai - Al Quoz Industrial 2 - Al Kahramana 2 - Warehouse
+                      40 - Opposite Jotun Paints
+                    </p>
+                  </div>
+                  <div class="location">
+                    <a
+                      type="button"
+                      role="button"
+                      data-bs-toggle="modal"
+                      data-bs-target="#branchesModal"
+                      class="fixanc item-anc"
+                    >
+                      <span class="icon"
+                        ><i class="fa-solid fa-location-dot"></i
+                      ></span>
+                      <div class="name">location</div>
+                      <span class="dots"
+                        ><i class="fa-solid fa-ellipsis"></i
+                      ></span>
+                    </a>
+                  </div>
+                </li>
+                <li class="item">
+                  <div class="name">
+                    First Branch (Dubai):
+                    <p class="fixp">
+                      Dubai - Deira - Hor Al Anz East 14M - Office No. 32
+                    </p>
+                  </div>
+                </li>
+                <li class="item">
+                  <div class="name">
+                    Second Branch (Abu Dhabi):
+                    <p class="fixp">
+                      Abu Dhabi - Al Ain - Al Nud - Wadi Al Ain 1 - Al Khalifa
+                      Auto Spare Parts Stores
+                    </p>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <script src="./assets/js/jquery-3.7.0.min.js"></script>
     <script src="./assets/js/bootstrap.min.js"></script>

@@ -5,7 +5,7 @@
     --black-color: #000000;
     --white-color: #ffffff;
     --body-bg: var(--white-color);
-    --border-raduis: 24px;
+    --border-radius: 5px;
 }
 body {
   font-family: "Tajawal", sans-serif;
@@ -34,7 +34,7 @@ body {
     background-color: var(--secondery-color);
     border: 2px solid transparent;
     background-clip: padding-box;
-    border-radius: 5px;
+    border-radius: var(--border-radius);
 }
 *,
 *::before,
@@ -51,6 +51,12 @@ input {
   -webkit-transition: 0.3s ease;
   -o-transition: 0.3s ease;
   transition: 0.3s ease;
+}
+.fixbtn {
+  background: transparent;
+  border-radius: 0;
+  border: none;
+  padding: 0;
 }
 .fixanc {
   text-decoration: none;
@@ -160,12 +166,13 @@ a:hover {
 {
   margin-top: 20px;
 }
-.items-list .item:not(:last-of-type)
+.items-list .item:not(:last-of-type),
+.brances-list .item:not(:last-of-type)
 {
   margin-bottom: 15px;
 }
-.side-section .item  .item-anc,
-.other-branches .item
+.items-list .item  .item-anc,
+.brances-list .item
 {
   display: flex;
   align-items: center;
@@ -173,10 +180,11 @@ a:hover {
   background-color: rgba(207, 54, 57, 0.8);
   color: var(--white-color);
   padding: 10px 20px;
-  border-radius: 5px;
-  cursor: pointer;
+  border-radius:var(--border-radius);
 }
-.side-section .item .icon 
+
+.items-list .item .icon,
+.location > .item-anc .icon
 {
   display: flex;
   align-items: center;
@@ -188,12 +196,15 @@ a:hover {
   background-color: var(--white-color);
   color: var(--primary-color);
 }
-.side-section .item .name
+.items-list .item .name,
+.brances-list .item .name
+
 {
   text-transform: capitalize;
   font-size: 18px;
 }
-.side-section .item .dots
+.items-list .item .dots,
+.location > .item-anc .dots
 {
   font-size: 16px;
 }
@@ -222,38 +233,72 @@ a:hover {
     z-index: -1;
     border-radius: 50%;
 }
-.branches
+.branches .modal-content
 {
-  margin-top: 15px;
+    background-color: var(--primary-color);
+    padding: 20px 30px;
+    border-radius: var(--border-radius);
 }
-.other-branches
+.branches .modal-header
+{
+    border: none;
+    padding: 0;
+    display: flex;
+    justify-content: flex-end;
+}
+.branches .modal-body
+{
+    padding: 0;
+}
+.modal-title
+{
+  color: var(--white-color);
+  font-size: 20px;
+  font-weight: 700;
+  position: relative;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+}
+.modal-title::after
+{
+  content: "";
+  width: 60px;
+  height: 2px;
+  background-color: var(--secondery-color);
+  position: absolute;
+  inset-inline-start: 0;
+  bottom: 0;
+}
+.modal-header .btn-close
+{
+    font-size: 18px;
+    color: #B40B0B;
+    padding: 0;
+    margin: 0;
+}
+.brances-list > li:first-child
+{
+  flex-direction: column;
+}
+.location
+{
+  width: 100%;
+}
+.location > .item-anc
 {
   display: flex;
   justify-content: space-between;
-  margin-top: 15px;
-  column-gap: 15px;
+  align-items: center;
+  background-color: var(--primary-color);
+  color: var(--white-color);
+  padding: 10px 20px;
+  border-radius: var(--border-radius);
 }
-.other-branches .item
+.location > .item-anc .icon
 {
-  flex: 1;
-  position: relative;
-  text-align: center;
-  justify-content: center;
-}
-.other-branches .item::before
-{
-  content: "";
-  height: 15px;
-  width: 2px;
-  background-color: rgba(207, 54, 57, 0.8);
-  position: absolute;
-  bottom: 100%;
-  left: 50%;
-  transform: translateX(-50%);
-}
-.other-branches .item .name
-{
-  font-size: 14px;
+  width: 30px;
+  height: 30px;
+  font-size: 18px;
 }
 
 
@@ -267,9 +312,9 @@ a:hover {
   .side-section
   {
     width: 100%;
-    border-radius: 10px;
     min-width: unset;
-    border-radius: 30px;
+    border-radius: calc(var(--border-radius) * 6);
+    border-radius: var(--border-radius);
     overflow: hidden;
     min-height: unset;
     padding: 25px 15px;
@@ -281,5 +326,9 @@ a:hover {
   .side-section .item .name
   {
     font-size: 14px;
+  }
+  .branches .modal-content
+  {
+      padding: 20px 15px;
   }
 }
